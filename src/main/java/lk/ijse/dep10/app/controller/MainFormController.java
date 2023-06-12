@@ -312,7 +312,12 @@ public class MainFormController {
     }
 
     public void lblRectangleOnMousePressed(MouseEvent mouseEvent) {
-
+        vBoxStartX = vBox.getLayoutX();
+        vBoxStartY = vBox.getLayoutY();
+        startScreenX = mouseEvent.getScreenX();
+        startScreenY = mouseEvent.getScreenY();
+        lblRectangle.setOpacity(0.7);
+        lblRectangle.setCursor(Cursor.MOVE);
     }
 
     public void lblRectangleOnMouseReleased(MouseEvent mouseEvent) {
