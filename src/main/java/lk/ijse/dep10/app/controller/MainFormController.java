@@ -366,7 +366,12 @@ public class MainFormController {
     }
 
     public void clrFillOnMouseEntered(MouseEvent mouseEvent) {
-
+        ScaleTransition scaleTransition = new ScaleTransition(Duration.seconds(0.1), clrFill);
+        scaleTransition.setFromX(1);
+        scaleTransition.setFromY(1);
+        scaleTransition.setToX(1.1);
+        scaleTransition.setToY(1.1);
+        scaleTransition.playFromStart();
     }
 
     public void clrFillOnMouseExited(MouseEvent mouseEvent) {
