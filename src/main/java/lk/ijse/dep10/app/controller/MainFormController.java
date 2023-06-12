@@ -279,6 +279,16 @@ public class MainFormController {
 
     /*Label Rectangle*/
     public void lblRectangleOnMouseDragged(MouseEvent mouseEvent) {
+//        vBox.setLayoutX(vBoxStartX + (mouseEvent.getScreenX() - startScreenX));
+//        vBox.setLayoutY(vBoxStartY + (mouseEvent.getScreenY() - startScreenY));
+        double x = vBoxStartX + (mouseEvent.getScreenX() - startScreenX);
+        double y = vBoxStartY + (mouseEvent.getScreenY() - startScreenY);
+
+        if (x < -20) vBox.setLayoutX(0);
+        else vBox.setLayoutX(vBoxStartX + (mouseEvent.getScreenX() - startScreenX));
+        vBox.setLayoutY(vBoxStartY + (mouseEvent.getScreenY() - startScreenY));
+
+
 
     }
 
