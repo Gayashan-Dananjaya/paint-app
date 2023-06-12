@@ -246,7 +246,23 @@ public class MainFormController {
     }
 
     public void cnvMainOnMouseReleased(MouseEvent mouseEvent) {
-
+        GraphicsContext gc = cnvMain.getGraphicsContext2D();
+        if (isRect) {
+            gc.fillRect(startX, startY, endX - startX, endY - startY);
+        }
+        if (isRoundRect) {
+            gc.fillRoundRect(startX, startY, endX - startX, endY - startY, 20, 20);
+        }
+        if (isCircle) {
+            gc.clearRect(0, 0, cnvMain.getWidth(), cnvMain.getHeight());
+            gc.strokeOval(startX, startY, minLength, minLength);
+            gc.fillOval(startX, startY, minLength, minLength);
+        }
+        if (isOval) {
+            gc.clearRect(0, 0, cnvMain.getWidth(), cnvMain.getHeight());
+            gc.strokeOval(startX, startY, endX - startX, endY - startY);
+            gc.fillOval(startX, startY, endX - startX, endY - startY);
+        }
     }
 
     public void cnvMainOnKeyPressed(KeyEvent keyEvent) {
