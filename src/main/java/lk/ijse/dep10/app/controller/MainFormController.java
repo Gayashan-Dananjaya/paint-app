@@ -321,7 +321,8 @@ public class MainFormController {
     }
 
     public void lblRectangleOnMouseReleased(MouseEvent mouseEvent) {
-
+        lblRectangle.setCursor(Cursor.DEFAULT);
+        lblRectangle.setOpacity(1);
     }
 
 
