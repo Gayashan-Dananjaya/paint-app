@@ -110,7 +110,21 @@ public class MainFormController {
 
     /*Canvas*/
     public void cnvMainOnMousePressed(MouseEvent mouseEvent) {
+        startXReal = mouseEvent.getX();
+        startYReal = mouseEvent.getY();
+        if (isText) {
+            isTextPositionSet = true;
+            cnvMain.setCursor(Cursor.TEXT);
+            cnvMain.requestFocus();
+            hBox.setLayoutX(startXReal);
+            hBox.setLayoutY(startYReal);
+            hBox.setVisible(true);
+            text = "";
+            lblTypedText.setText(text);
 
+
+            timeline.playFromStart();
+        }
     }
 
     public void cnvMainOnMouseDragged(MouseEvent mouseEvent) {
