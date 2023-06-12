@@ -328,11 +328,17 @@ public class MainFormController {
 
     /*Stroke Button*/
     public void clrStrokeOnAction(ActionEvent actionEvent) {
-
+        GraphicsContext gc = cnvMain.getGraphicsContext2D();
+        gc.setStroke(clrStroke.getValue());
     }
 
     public void clrStrokeOnMouseEntered(MouseEvent mouseEvent) {
-
+        ScaleTransition scaleTransition = new ScaleTransition(Duration.seconds(0.1), clrStroke);
+        scaleTransition.setFromX(1);
+        scaleTransition.setFromY(1);
+        scaleTransition.setToX(1.1);
+        scaleTransition.setToY(1.1);
+        scaleTransition.playFromStart();
     }
 
     public void clrStrokeOnMouseExited(MouseEvent mouseEvent) {
