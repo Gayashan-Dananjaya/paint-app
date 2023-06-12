@@ -398,23 +398,44 @@ public class MainFormController {
     }
 
     public void btnRectOnMouseEntered(MouseEvent mouseEvent) {
-
+        ScaleTransition scaleTransition = new ScaleTransition(Duration.seconds(0.2), btnRect);
+        scaleTransition.setFromX(1);
+        scaleTransition.setFromY(1);
+        scaleTransition.setToX(1.1);
+        scaleTransition.setToY(1.1);
+        scaleTransition.playFromStart();
     }
 
     public void btnRectOnMouseExited(MouseEvent mouseEvent) {
-
+        ScaleTransition scaleTransition = new ScaleTransition(Duration.seconds(0.2), btnRect);
+        scaleTransition.setFromX(1.1);
+        scaleTransition.setFromY(1.1);
+        scaleTransition.setToX(1);
+        scaleTransition.setToY(1);
+        scaleTransition.playFromStart();
     }
 
     public void btnRoundRectOnAction(ActionEvent actionEvent) {
-
+        isRoundRect = !isRoundRect;
+        isRect = isCircle = isOval = isPencil = isText = isEraser = false;
     }
 
     public void btnRoundRectOnMouseEntered(MouseEvent mouseEvent) {
-
+        ScaleTransition scaleTransition = new ScaleTransition(Duration.seconds(0.2), btnRoundRect);
+        scaleTransition.setFromX(1);
+        scaleTransition.setFromY(1);
+        scaleTransition.setToX(1.1);
+        scaleTransition.setToY(1.1);
+        scaleTransition.playFromStart();
     }
 
     public void btnRoundRectOnMouseExited(MouseEvent mouseEvent) {
-
+        ScaleTransition scaleTransition = new ScaleTransition(Duration.seconds(0.2), btnRoundRect);
+        scaleTransition.setFromX(1.1);
+        scaleTransition.setFromY(1.1);
+        scaleTransition.setToX(1);
+        scaleTransition.setToY(1);
+        scaleTransition.playFromStart();
     }
 
     public void btnCircleOnAction(ActionEvent actionEvent) {
