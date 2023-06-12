@@ -485,15 +485,26 @@ public class MainFormController {
     }
 
     public void btnPencilOnAction(ActionEvent actionEvent) {
-
+        isPencil = !isPencil;
+        isRect = isRoundRect = isCircle = isOval = isText = isEraser = false;
     }
 
     public void btnPencilOnMouseEntered(MouseEvent mouseEvent) {
-
+        ScaleTransition scaleTransition = new ScaleTransition(Duration.seconds(0.2), btnPencil);
+        scaleTransition.setFromX(1);
+        scaleTransition.setFromY(1);
+        scaleTransition.setToX(1.1);
+        scaleTransition.setToY(1.1);
+        scaleTransition.playFromStart();
     }
 
     public void btnPencilOnMouseExited(MouseEvent mouseEvent) {
-
+        ScaleTransition scaleTransition = new ScaleTransition(Duration.seconds(0.2), btnPencil);
+        scaleTransition.setFromX(1.1);
+        scaleTransition.setFromY(1.1);
+        scaleTransition.setToX(1);
+        scaleTransition.setToY(1);
+        scaleTransition.playFromStart();
     }
 
     public void btnEraserOnAction(ActionEvent actionEvent) {
