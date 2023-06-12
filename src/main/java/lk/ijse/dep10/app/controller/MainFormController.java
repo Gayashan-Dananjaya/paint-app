@@ -128,6 +128,120 @@ public class MainFormController {
     }
 
     public void cnvMainOnMouseDragged(MouseEvent mouseEvent) {
+        GraphicsContext gc = cnvMain.getGraphicsContext2D();
+        endXReal = mouseEvent.getX();
+        endYReal = mouseEvent.getY();
+//        if (isRect) {
+//            gc.clearRect(0, 0, cnvMain.getWidth(), cnvMain.getHeight());
+//            gc.beginPath();
+//            gc.rect(startX, startY, mouseEvent.getX() - startX, mouseEvent.getY() - startY);
+//            gc.fill();
+//            gc.stroke();
+//        }
+        if (isRect) {
+            if (startXReal > endXReal) {
+                startX = endXReal;
+                endX = startXReal;
+            } else {
+                startX = startXReal;
+                endX = endXReal;
+            }
+            if (startYReal > endYReal) {
+                startY = endYReal;
+                endY = startYReal;
+            } else {
+                startY = startYReal;
+                endY = endYReal;
+            }
+
+            gc.clearRect(0, 0, cnvMain.getWidth(), cnvMain.getHeight());
+            gc.strokeRect(startX, startY, endX - startX, endY - startY);
+        }
+        if (isRoundRect) {
+            System.out.println("Round Rectangle");
+            if (startXReal > endXReal) {
+                startX = endXReal;
+                endX = startXReal;
+            } else {
+                startX = startXReal;
+                endX = endXReal;
+            }
+            if (startYReal > endYReal) {
+                startY = endYReal;
+                endY = startYReal;
+            } else {
+                startY = startYReal;
+                endY = endYReal;
+            }
+
+            gc.clearRect(0, 0, cnvMain.getWidth(), cnvMain.getHeight());
+            gc.strokeRoundRect(startX, startY, endX - startX, endY - startY, 20, 20);
+        }
+        if (isCircle) {
+            System.out.println("Circle");
+            if (startXReal > endXReal) {
+                startX = endXReal;
+                endX = startXReal;
+            } else {
+                startX = startXReal;
+                endX = endXReal;
+            }
+            if (startYReal > endYReal) {
+                startY = endYReal;
+                endY = startYReal;
+            } else {
+                startY = startYReal;
+                endY = endYReal;
+            }
+
+            double width = endX - startX;
+            double height = endY - startY;
+            minLength = Math.min(width, height);
+
+            if ((startXReal - startX) > minLength) startX = startXReal - minLength;
+            if ((startYReal - startY) > minLength) startY = startYReal - minLength;
+
+
+            gc.clearRect(0, 0, cnvMain.getWidth(), cnvMain.getHeight());
+            Paint color = gc.getStroke();
+            gc.setStroke(Color.LIGHTGRAY);
+            gc.strokeRect(startX, startY, minLength, minLength);
+            gc.setStroke(color);
+            gc.strokeOval(startX, startY, minLength, minLength);
+        }
+        if (isOval) {
+            System.out.println("Oval");
+            if (startXReal > endXReal) {
+                startX = endXReal;
+                endX = startXReal;
+            } else {
+                startX = startXReal;
+                endX = endXReal;
+            }
+            if (startYReal > endYReal) {
+                startY = endYReal;
+                endY = startYReal;
+            } else {
+                startY = startYReal;
+                endY = endYReal;
+            }
+
+            gc.clearRect(0, 0, cnvMain.getWidth(), cnvMain.getHeight());
+            Paint color = gc.getStroke();
+            gc.setStroke(Color.LIGHTGRAY);
+            gc.strokeRect(startX, startY, endX - startX, endY - startY);
+            gc.setStroke(color);
+            gc.strokeOval(startX, startY, endX - startX, endY - startY);
+        }
+        if (isPencil) {
+            System.out.println("Pencil");
+            gc.strokeLine(startXReal, startYReal, mouseEvent.getX(), mouseEvent.getY());
+            startXReal = mouseEvent.getX();
+            startYReal = mouseEvent.getY();
+        }
+        if (isEraser) {
+            gc.clearRect(mouseEvent.getX(), mouseEvent.getY(), 25,25);
+        }
 
     }
 
