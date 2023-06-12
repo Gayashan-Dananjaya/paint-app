@@ -384,16 +384,17 @@ public class MainFormController {
     }
 
     public void clrFillOnMousePressed(MouseEvent mouseEvent) {
- 
+        clrFill.setOpacity(0.7);
     }
 
     public void clrFillOnMouseReleased(MouseEvent mouseEvent) {
-
+        clrFill.setOpacity(1);
     }
 
     /*Button rectangle*/
     public void btnRectOnAction(ActionEvent actionEvent) {
-
+        isRect = !isRect;
+        isRoundRect = isCircle = isOval = isPencil = isText = isEraser = false;
     }
 
     public void btnRectOnMouseEntered(MouseEvent mouseEvent) {
