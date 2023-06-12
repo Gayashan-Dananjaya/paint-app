@@ -361,7 +361,8 @@ public class MainFormController {
 
     /*Fill Button*/
     public void clrFillOnAction(ActionEvent actionEvent) {
-
+        GraphicsContext gc = cnvMain.getGraphicsContext2D();
+        gc.setFill(clrFill.getValue());
     }
 
     public void clrFillOnMouseEntered(MouseEvent mouseEvent) {
