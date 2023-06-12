@@ -541,15 +541,29 @@ public class MainFormController {
 
 
     public void btnTextOnAction(ActionEvent actionEvent) {
-
+        isText = !isText;
+        cnvMain.setCursor(Cursor.DEFAULT);
+        hBox.setVisible(false);
+        cnvMain.setFocusTraversable(false);
+        isRect = isRoundRect = isCircle = isOval = isEraser = isPencil = false;
     }
 
     public void btnTextOnMouseEntered(MouseEvent mouseEvent) {
-
+        ScaleTransition scaleTransition = new ScaleTransition(Duration.seconds(0.2), btnText);
+        scaleTransition.setFromX(1);
+        scaleTransition.setFromY(1);
+        scaleTransition.setToX(1.1);
+        scaleTransition.setToY(1.1);
+        scaleTransition.playFromStart();
     }
 
     public void btnTextOnMouseExited(MouseEvent mouseEvent) {
-
+        ScaleTransition scaleTransition = new ScaleTransition(Duration.seconds(0.2), btnText);
+        scaleTransition.setFromX(1.1);
+        scaleTransition.setFromY(1.1);
+        scaleTransition.setToX(1);
+        scaleTransition.setToY(1);
+        scaleTransition.playFromStart();
     }
 
 
