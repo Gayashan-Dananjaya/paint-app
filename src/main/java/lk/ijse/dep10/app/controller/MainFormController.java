@@ -508,15 +508,35 @@ public class MainFormController {
     }
 
     public void btnEraserOnAction(ActionEvent actionEvent) {
-
+        isRect = isRoundRect = isCircle = isOval = isText = isPencil = false;
+        if (!isEraser) {
+            isEraser = true;
+            URL imageUrl = this.getClass().getResource("/img/square.png");
+            Image curser = new Image(imageUrl.toString(), 30, 30, true, true);
+            ImageCursor imageCursor = new ImageCursor(curser);
+            cnvMain.setCursor(imageCursor);
+        } else {
+            isEraser = false;
+            cnvMain.setCursor(Cursor.DEFAULT);
+        }
     }
 
     public void btnEraserOnMouseEntered(MouseEvent mouseEvent) {
-
+        ScaleTransition scaleTransition = new ScaleTransition(Duration.seconds(0.2), btnEraser);
+        scaleTransition.setFromX(1);
+        scaleTransition.setFromY(1);
+        scaleTransition.setToX(1.1);
+        scaleTransition.setToY(1.1);
+        scaleTransition.playFromStart();
     }
 
     public void btnEraserOnMouseExited(MouseEvent mouseEvent) {
-
+        ScaleTransition scaleTransition = new ScaleTransition(Duration.seconds(0.2), btnEraser);
+        scaleTransition.setFromX(1.1);
+        scaleTransition.setFromY(1.1);
+        scaleTransition.setToX(1);
+        scaleTransition.setToY(1);
+        scaleTransition.playFromStart();
     }
 
 
