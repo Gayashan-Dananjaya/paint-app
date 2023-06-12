@@ -342,7 +342,12 @@ public class MainFormController {
     }
 
     public void clrStrokeOnMouseExited(MouseEvent mouseEvent) {
-
+        ScaleTransition scaleTransition = new ScaleTransition(Duration.seconds(0.1), clrStroke);
+        scaleTransition.setFromX(1.1);
+        scaleTransition.setFromY(1.1);
+        scaleTransition.setToX(1);
+        scaleTransition.setToY(1);
+        scaleTransition.playFromStart();
     }
 
     public void clrStrokeOnMousePressed(MouseEvent mouseEvent) {
