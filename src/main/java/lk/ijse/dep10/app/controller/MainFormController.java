@@ -266,7 +266,15 @@ public class MainFormController {
     }
 
     public void cnvMainOnKeyPressed(KeyEvent keyEvent) {
-
+        if (keyEvent.getCode().getName().equals("Backspace")) {
+            if (text.length() > 0) text = text.substring(0, text.length() - 1);
+        } else text += keyEvent.getText();
+        lblTypedText.setText(text);
+        GraphicsContext gc = cnvMain.getGraphicsContext2D();
+        gc.setFont(Font.font("", FontWeight.THIN,20));
+        gc.clearRect(0,0,cnvMain.getWidth(), cnvMain.getHeight());
+        gc.strokeText(text,startXReal,startYReal+20);
+        gc.fillText(text,startXReal,startYReal+20);
     }
 
     /*Label Rectangle*/
