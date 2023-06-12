@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxWidth="-Infinity" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep10.app.controller.MainFormController">
+   <children>
+      <Canvas fx:id="cnvMain" height="1100.0" layoutX="-30.0" layoutY="-23.0" onKeyPressed="#cnvMainOnKeyPressed" onMouseDragged="#cnvMainOnMouseDragged" onMousePressed="#cnvMainOnMousePressed" onMouseReleased="#cnvMainOnMouseReleased" width="2000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <HBox fx:id="hBox" alignment="CENTER_LEFT" layoutX="150.0" layoutY="30.0" maxHeight="50.0" spacing="3.0">
+         <children>
+            <Label fx:id="lblTypedText">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblCursorIcon">
+               <graphic>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="23.0" stroke="BLACK" strokeType="INSIDE" width="6.0" />
+               </graphic>
+            </Label>
+         </children>
+      </HBox>
+      <VBox fx:id="vBox" alignment="TOP_CENTER" maxWidth="100.0" minHeight="400.0" minWidth="100.0" spacing="5.0">
+         <children>
+            <Label fx:id="lblRectangle" maxWidth="1.7976931348623157E308" onMouseDragged="#lblRectangleOnMouseDragged" onMouseEntered="#lblRectangleOnMouseEntered" onMouseExited="#lblRectangleOnMouseExited" onMousePressed="#lblRectangleOnMousePressed" onMouseReleased="#lblRectangleOnMouseReleased">
+               <graphic>
+                  <Rectangle arcHeight="8.0" arcWidth="8.0" height="20.0" stroke="#dddddd" strokeType="INSIDE" strokeWidth="0.0" width="100.0">
+                     <fill>
+                        <LinearGradient endX="0.11904761904761907" endY="1.0" startX="0.1190476190476191" startY="0.009523809523809525">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Rectangle>
+               </graphic>
+            </Label>
+            <Button fx:id="btnRect" alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btnRectOnAction" onMouseEntered="#btnRectOnMouseEntered" onMouseExited="#btnRectOnMouseExited">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/rectangle.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnRoundRect" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="35.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btnRoundRectOnAction" onMouseEntered="#btnRoundRectOnMouseEntered" onMouseExited="#btnRoundRectOnMouseExited">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/rounded-rectangle.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnCircle" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="98.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btnCircleOnAction" onMouseEntered="#btnCircleOnMouseEntered" onMouseExited="#btnCircleOnMouseExited">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/circle.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnOval" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="98.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btnOvalOnAction" onMouseEntered="#btnOvalOnMouseEntered" onMouseExited="#btnOvalOnMouseExited">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/ellipse.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnPencil" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="161.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btnPencilOnAction" onMouseEntered="#btnPencilOnMouseEntered" onMouseExited="#btnPencilOnMouseExited">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/pencil.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnEraser" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="224.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btnEraserOnAction" onMouseEntered="#btnEraserOnMouseEntered" onMouseExited="#btnEraserOnMouseExited">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/eraser.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnText" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="287.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btnTextOnAction" onMouseEntered="#btnTextOnMouseEntered" onMouseExited="#btnTextOnMouseExited">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/text.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Label alignment="CENTER" maxWidth="1.7976931348623157E308" style="-fx-background-color: #dddddd;" text="Stroke Color" />
+            <Label contentDisplay="CENTER" maxWidth="1.7976931348623157E308">
+               <graphic>
+                  <ColorPicker fx:id="clrStroke" maxWidth="1.7976931348623157E308" onAction="#clrStrokeOnAction" onMouseEntered="#clrStrokeOnMouseEntered" onMouseExited="#clrStrokeOnMouseExited" onMousePressed="#clrStrokeOnMousePressed" onMouseReleased="#clrStrokeOnMouseReleased" />
+               </graphic>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="40.0" layoutY="559.0" maxWidth="1.7976931348623157E308" style="-fx-background-color: #dddddd;" text="Fill Color" />
+            <Label contentDisplay="CENTER" layoutX="30.0" layoutY="559.0" maxWidth="1.7976931348623157E308">
+               <graphic>
+                  <ColorPicker fx:id="clrFill" maxWidth="1.7976931348623157E308" onAction="#clrFillOnAction" onMouseEntered="#clrFillOnMouseEntered" onMouseExited="#clrFillOnMouseExited" onMousePressed="#clrFillOnMousePressed" onMouseReleased="#clrFillOnMouseReleased" />
+               </graphic>
+            </Label>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
