@@ -351,7 +351,7 @@ public class MainFormController {
     }
 
     public void clrStrokeOnMousePressed(MouseEvent mouseEvent) {
-
+        clrStroke.setOpacity(0.7);
     }
 
     public void clrStrokeOnMouseReleased(MouseEvent mouseEvent) {
